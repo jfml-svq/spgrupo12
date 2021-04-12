@@ -1,6 +1,6 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.sanvalero.netflix.domain.Movie"%>
-<%@page import="com.sanvalero.netflix.dao.MovieDAO"%>
+<%@page import="com.sanvalero.spgrupo12.domain.Movie"%>
+<%@page import="com.sanvalero.spgrupo12.dao.MovieDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
