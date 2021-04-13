@@ -24,7 +24,7 @@ public class GetParcelsServlet extends HttpServlet {
         out.println("<p>Listado de paquetes (con servlet)</p>");
         ParcelDAO parcelDAO = new ParcelDAO();
         try {
-            ArrayList<Parcel> parcels = parcelDAO.getAllParcel();
+            ArrayList<Parcel> parcels = parcelDAO.getAllParcels();
             out.println("<ul>");
             for (Parcel parcel : parcels) {
                 out.println("<li>" + parcel.getDescripcion() + " <a href='remove-parcel?id=" + parcel.getId() + "'>Eliminar</a></li>");

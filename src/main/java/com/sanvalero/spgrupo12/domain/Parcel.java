@@ -20,14 +20,22 @@ public class Parcel {
         this.express = express;
     }
 
+    public Parcel(){}
+    
+    public Parcel(String descripcion, String destinatario, String origen) {
+        this.descripcion = descripcion;
+        this.destinatario = destinatario;
+        this.origen = origen;
+    }
+
 
     public int getId() {
         return idPaquete;
     }
-//
-//    public void setId(int id) {
-//        this.id = id;
-//    }
+
+   public void setId(int idPaquete) {
+       this.idPaquete = idPaquete;
+   }
 
     public String getDescripcion() {
         return descripcion;

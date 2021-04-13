@@ -7,17 +7,16 @@
     </head>
     <body>
         <h1>Ejemplo de formulario web</h1>
-        <form method="post" action="x">
-            ID:
-            <input type="text" name="id"/><br/>
-            Título:
-            <input type="text" name="title"/><br/>
-            Director:
-            <input type="text" name="director"/><br/>
-            Duración:
-            <input type="text" name="duration"/><br/>
-            Categoría:
-            <input type="text" name="category"/><br/>            
+        <form method="post" action="add-parcel">
+            
+            Descripcion:
+            <input type="text" name="descripcion"/><br/>
+            Destinatario
+            <input type="text" name="destinatario"/><br/>
+            Origen
+            <input type="text" name="origen"/><br/>
+            Expres:
+            <input type="checkbox" name="viewed"/><br/>            
             <input type="submit" value="Registrar"/>
         </form>
         

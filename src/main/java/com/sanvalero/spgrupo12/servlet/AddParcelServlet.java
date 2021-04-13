@@ -23,9 +23,9 @@ public class AddParcelServlet extends HttpServlet {
         String descripcion = request.getParameter("descripcion");
         String destinatario = request.getParameter("destinatario");
         String origen = request.getParameter("origen");
-        String express = request.getParameter("express");
+        /*String express = request.getParameter("express");*/
         
-        Parcel parcel = new Parcel(descripcion, destinatario, origen, express);
+        Parcel parcel = new Parcel(descripcion, destinatario, origen/*, express*/);
         ParcelDAO parcelDAO = new ParcelDAO();
         try {
             parcelDAO.addParcel(parcel);

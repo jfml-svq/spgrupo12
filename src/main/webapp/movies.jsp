@@ -1,6 +1,6 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.sanvalero.spgrupo12.domain.Movie"%>
-<%@page import="com.sanvalero.spgrupo12.dao.MovieDAO"%>
+<%@page import="com.sanvalero.spgrupo12.domain.Parcel"%>
+<%@page import="com.sanvalero.spgrupo12.dao.ParcelDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,20 +11,23 @@
     <body>
         <h1>Lista de peliculas (con JSP)</h1>
         <%
-            MovieDAO movieDAO = new MovieDAO();
-            ArrayList<Movie> movies = movieDAO.getAllMovies();
+            ParcelDAO paqueteDAO = new ParcelDAO();
+            ArrayList<Parcel> parcels = paqueteDAO.getAllParcels();
         %>
         <ul>
         <%
-            for (Movie movie : movies) {
+            for (Parcel parcel : parcels) {
         %>
-        <li><%= movie.getTitle() %> <a href="remove-movie?id=<%= movie.getId() %>">Eliminar</a></li>
+        <li><%= parcel.getDestinatario() %></li>
         <%    
+            %>
+        <li><%= parcel.getOrigen()%></li>
+        <% 
             }
         %>
         </ul>
-        <!-- FIXME pelicula de ejemplo (eliminar cuando se desarrolle el listado) -->
-        <li>Título de ejemplo <a href="remove-movie?id=45">Eliminar</a></li>
+        <!-- FIXME pelicula de ejemplo (eliminar cuando se desarrolle el listado) 
+        <li>Título de ejemplo <a href="remove-movie?id=45">Eliminar</a></li>-->
         <%
             // Muestra el mensaje (si lo hay)
             String message = request.getParameter("message");
