@@ -1,24 +1,24 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.sanvalero.spgrupo12.domain.Paquete"%>
-<%@page import="com.sanvalero.spgrupo12.dao.PaqueteDAO"%>
+<%@page import="com.sanvalero.spgrupo12.domain.Movie"%>
+<%@page import="com.sanvalero.spgrupo12.dao.MovieDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Listado de paquete</title>
+        <title>Listado de peliculas</title>
     </head>
     <body>
-        <h1>Lista de paquetes (con JSP)</h1>
+        <h1>Lista de peliculas (con JSP)</h1>
         <%
-            PaqueteDAO paqueteDAO = new PaqueteDAO();
-            ArrayList<Paquete> paquetes = paqueteDAO.getAllPackages();
+            MovieDAO movieDAO = new MovieDAO();
+            ArrayList<Movie> movies = movieDAO.getAllMovies();
         %>
         <ul>
         <%
-            for (Paquete movie : paquetes) {
+            for (Movie movie : movies) {
         %>
-        <li><%= paquetes.getId() %> <a href="remove-movie?id=<%= movie.getId() %>">Eliminar</a></li>
+        <li><%= movie.getTitle() %> <a href="remove-movie?id=<%= movie.getId() %>">Eliminar</a></li>
         <%    
             }
         %>
