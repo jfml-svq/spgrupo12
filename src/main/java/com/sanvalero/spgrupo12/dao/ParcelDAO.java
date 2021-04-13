@@ -1,24 +1,24 @@
 
 package com.sanvalero.spgrupo12.dao;
 
-import com.sanvalero.spgrupo12.domain.Movie;
+import com.sanvalero.spgrupo12.domain.Parcel;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class MovieDAO {
+public class ParcelDAO {
 
     private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
     private final String URL_CONEXION = "jdbc:oracle:thin@localhost:1521:practica";
-    private final String USUARIO = "practica";
-    private final String CONTRASENA = "practica";
+    private final String USUARIO = "PRUEBA";
+    private final String CONTRASENA = "PRUEBA";
     
     private Connection connection;
     
     
-    public MovieDAO() {
+    public ParcelDAO() {
         connect();
     }
     
@@ -48,43 +48,43 @@ public class MovieDAO {
     }
     
     /**
-     * Añade una pelicula a la base de datos
-     * @param movie La pelicula con la información que se quiere registrar
+     * Añade un paquete a la base de datos
+     * @param Parcel El paquete con la información que se quiere registrar
      * @throws SQLException 
      */
-    public void addMovie(Movie movie) throws SQLException {
-        String sql = "INSERT INTO movies (id, title, director, duration, category) VALUES (?, ?, ?, ?, ?)";
+    public void addParcel(Parcel Parcel) throws SQLException {
+        String sql = "INSERT INTO paquete (Descripcion, Destinatario, Origen, expres) VALUES (?, ?, ?, ?)";
         
         PreparedStatement sentencia = connection.prepareStatement(sql);
-        sentencia.setInt(1, movie.getId());
-        sentencia.setString(2, movie.getTitle());
-        sentencia.setString(3, movie.getDirector());
-        sentencia.setInt(4, movie.getDuration());
-        sentencia.setString(5, movie.getCategory());
+        //sentencia.setInt(1, Parcel.getId());//
+        sentencia.setString(1, Parcel.getDescripcion());
+        sentencia.setString(2, Parcel.getDestinatario());
+        sentencia.setString(3, Parcel.getOrigen());
+        sentencia.setString(4, Parcel.getExpress());
         sentencia.executeUpdate();
     }
     
     /**
-     * Obtiene la lista de peliculas de la base de datos
+     * Obtiene la lista de paquetes de la base de datos
      * @return Una colección con las peliculas
      */
-    public ArrayList<Movie> getAllMovies() throws SQLException {        
+    public ArrayList<Parcel> getAllParcel() throws SQLException {        
         return new ArrayList<>();
     }
     
     /**
-     * Elimina una película
+     * Elimina un paquete
      * @param id El id de la pelicula a eliminar
      */
-    public void removeMovie(int id) {
+    public void removeParcel(int id) {
         
     }
     
     /**
-     * Modifica la información de una pelicula
-     * @param movie La película con la información a modificar
+     * Modifica la información de un paquete
+     * @param parcel El paquete con la información a modificar
      */
-    public void modifyMovie(Movie movie) {
+    public void modifyParcel(Parcel parcel) {
         
     }
 }

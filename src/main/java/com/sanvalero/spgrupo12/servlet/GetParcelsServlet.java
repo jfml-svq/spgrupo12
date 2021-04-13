@@ -1,7 +1,7 @@
 package com.sanvalero.spgrupo12.servlet;
 
-import com.sanvalero.spgrupo12.dao.MovieDAO;
-import com.sanvalero.spgrupo12.domain.Movie;
+import com.sanvalero.spgrupo12.dao.ParcelDAO;
+import com.sanvalero.spgrupo12.domain.Parcel;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -15,22 +15,22 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet que obtiene la lista completa de peliculas de la base de datos
  */
-@WebServlet(name = "movies", urlPatterns = {"/movies"})
-public class GetMoviesServlet extends HttpServlet {
+@WebServlet(name = "parcels", urlPatterns = {"/parcels"})
+public class GetParcelsServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
         PrintWriter out = response.getWriter();
-        out.println("<p>Listado de peliculas (con servlet)</p>");
-        MovieDAO movieDAO = new MovieDAO();
+        out.println("<p>Listado de paquetes (con servlet)</p>");
+        ParcelDAO parcelDAO = new ParcelDAO();
         try {
-            ArrayList<Movie> movies = movieDAO.getAllMovies();
+            ArrayList<Parcel> parcels = parcelDAO.getAllParcel();
             out.println("<ul>");
-            for (Movie movie : movies) {
-                out.println("<li>" + movie.getTitle() + " <a href='remove-movie?id=" + movie.getId() + "'>Eliminar</a></li>");
+            for (Parcel parcel : parcels) {
+                out.println("<li>" + parcel.getDescripcion() + " <a href='remove-parcel?id=" + parcel.getId() + "'>Eliminar</a></li>");
             }
             // FIXME pelicula de ejemplo (eliminar cuando se desarrolle el listado)
-            out.println("<li>Pelicula de ejemplo</li> <a href='remove-movie?id=23'>Eliminar</a></li>");
+            out.println("<li>Parcel de ejemplo</li> <a href='remove-parcel?id=23'>Eliminar</a></li>");
             out.println("</ul>");
 
             // Muestra el mensaje (si lo hay)

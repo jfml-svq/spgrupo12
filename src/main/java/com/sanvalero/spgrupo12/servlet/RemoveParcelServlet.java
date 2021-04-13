@@ -1,6 +1,6 @@
 package com.sanvalero.spgrupo12.servlet;
 
-import com.sanvalero.spgrupo12.dao.MovieDAO;
+import com.sanvalero.spgrupo12.dao.ParcelDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet que elimina una película a la base de datos
  */
-@WebServlet(name = "remove-movie", urlPatterns = {"/remove-movie"})
-public class RemoveMovieServlet extends HttpServlet {
+@WebServlet(name = "remove-parcel", urlPatterns = {"/remove-parcel"})
+public class RemoveParcelServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        int movieId = Integer.parseInt(request.getParameter("id"));
-        MovieDAO movieDAO = new MovieDAO();
-        movieDAO.removeMovie(movieId);
+        int parcel = Integer.parseInt(request.getParameter("id"));
+        ParcelDAO parcelDAO = new ParcelDAO();
+        parcelDAO.removeParcel(parcel);
         
-        response.sendRedirect("movies?message=Pelicula eliminada");
+        response.sendRedirect("parcels?message=Pelicula eliminada");
     }
     
     
