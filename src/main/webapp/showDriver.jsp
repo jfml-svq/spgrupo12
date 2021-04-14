@@ -34,7 +34,8 @@
             <td><%= driver.getNombre() %></td>
             <td><%= driver.getApellidos()%></td>            
             <td><%= driver.getPoblacion()%></td>
-            <td><%= driver.getTelefono()%></td>            
+            <td><%= driver.getTelefono()%></td>
+            <td><a href="myFormPhone.jsp">Editar Telefono</a></td>            
         </tr> 
         <%    
             }
