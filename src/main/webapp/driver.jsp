@@ -6,13 +6,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
         <title>Listado de peliculas</title>
     </head>
     <body>
+        <a href="index.html"><p>Volver a inicio </p></a>
         <h1>Lista de peliculas (con JSP)</h1>
         <%
-            DriverDAO parcelDAO = new DriverDAO();
-            ArrayList<Driver> drivers = parcelDAO.getAllDrivers();
+            DriverDAO driverDAO = new DriverDAO();
+            ArrayList<Driver> drivers = driverDAO.getAllDrivers();
         %>
         <ul>
         <%
