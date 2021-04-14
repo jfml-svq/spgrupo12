@@ -17,6 +17,7 @@
         
         <table border="1">
         <tr>
+            <th>Numero Pedido</th>
             <th>Destinatario</th>  
             <th>Origen</th>
             <th>Eliminar</th>            
@@ -25,6 +26,7 @@
             for (Parcel parcel : parcels) {
         %>
         <tr>
+            <td><%= parcel.getId() %></td>
             <td><%= parcel.getDestinatario() %></td>
             <td><%= parcel.getOrigen()%></td>
             <td><a href="remove-parcel?id=<%= parcel.getId() %>">Eliminar</a></li></td>
