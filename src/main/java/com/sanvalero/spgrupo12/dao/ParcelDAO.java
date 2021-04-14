@@ -1,4 +1,3 @@
-
 package com.sanvalero.spgrupo12.dao;
 
 import com.sanvalero.spgrupo12.domain.Parcel;
