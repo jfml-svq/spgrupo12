@@ -6,10 +6,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Listado de peliculas</title>
+        <title>Listado de paquete</title>
     </head>
     <body>
-        <h1>Lista de peliculas (con JSP)</h1>
+        <h1>Lista de paquetes (con JSP)</h1>
         <%
             ParcelDAO paqueteDAO = new ParcelDAO();
             ArrayList<Parcel> parcels = paqueteDAO.getAllParcels();

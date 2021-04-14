@@ -11,20 +11,32 @@
     </head>
     <body>
         <a href="index.html"><p>Volver a inicio </p></a>
-        <h1>Lista de peliculas (con JSP)</h1>
+        <h1>Lista de camioneros (con JSP)</h1>
         <%
             DriverDAO driverDAO = new DriverDAO();
             ArrayList<Driver> drivers = driverDAO.getAllDrivers();
         %>
-        <ul>
+        
+        <table border="1">
+        <tr>
+            <th>Nombre</th>  
+            <th>Apellido</th>
+            <th>telefono</th>            
+        </tr>
         <%
             for (Driver driver : drivers) {
         %>
-        <li><%= driver.getDni() %> <a href="remove-drtiver?id=<%= driver.getDni() %>">Eliminar</a></li>
+        <tr>
+            <td><%= driver.getNombre() %></td>
+            <td><%= driver.getApellidos()%></td>
+            <td><%= driver.getTelefono()%></td>
+            <td><a href="remove-parcel?id=<%= driver.getDni() %>">Eliminar</a></li></td>
+        </tr> 
         <%    
             }
         %>
-        </ul>
+        </table>
+        <a href="index.html"><p>Volver a inicio </p></a>
         <!-- FIXME pelicula de ejemplo (eliminar cuando se desarrolle el listado) -->
         <li>Título de ejemplo <a href="remove-driver?id=45">Eliminar</a></li>
         <%
