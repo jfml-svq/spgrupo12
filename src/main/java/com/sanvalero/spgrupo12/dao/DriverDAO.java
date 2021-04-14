@@ -111,12 +111,6 @@ public class DriverDAO {
        return drivers;
     }
     
-    
-    
-   
-    
-    
-
     /**
      * Elimina un paquete
      *
@@ -136,8 +130,15 @@ public class DriverDAO {
      *
      * @param parcel El paquete con la información a modificar
      */
-    public void modifyParcel(Driver driver) {
+    public void modifyPhone(String telefono, String dni) throws SQLException {
+            
+        String sql = "UPDATE CAMIONERO SET TELEFONO = ? WHERE DNI = ?";
 
+        PreparedStatement sentencia = connection.prepareStatement(sql);
+        sentencia.setString(1, telefono);
+        sentencia.setString(2, dni);
+        sentencia.executeUpdate();
+        
     }
 
 }

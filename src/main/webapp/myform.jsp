@@ -17,7 +17,7 @@
             Origen
             <input type="text" name="origen"/><br/>
             Expres:
-            <input type="checkbox" name="viewed"/><br/>            
+            <input type="text" name="express"/><br/>            
             <input type="submit" value="Registrar"/>
         </form>
         

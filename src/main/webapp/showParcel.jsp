@@ -1,7 +1,7 @@
 
-<%@page import="com.sanvalero.spgrupo12.domain.Driver"%>
+<%@page import="com.sanvalero.spgrupo12.domain.Parcel"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.sanvalero.spgrupo12.dao.DriverDAO"%>
+<%@page import="com.sanvalero.spgrupo12.dao.ParcelDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,30 +12,30 @@
     <body>
         <body>
         <a href="index.html"><p>Volver a inicio </p></a>
-        <h1>Lista de camioneros (con JSP)</h1>
-        <% String dni = request.getParameter("dni"); %>
+        <h1>Lista de detalles paquetes (con JSP)</h1>
+        <% String id = request.getParameter("id"); %>
         <%  
-            DriverDAO driverDAO = new DriverDAO();
-            ArrayList<Driver> drivers = driverDAO.getDrivers(dni);
+            ParcelDAO parcelDAO = new ParcelDAO();
+            ArrayList<Parcel> parcels = parcelDAO.getParcels(id);
         %>
         <table border="1">
         <tr>
-            <th>DNI</th> 
-            <th>Nombre</th>  
-            <th>Apellido</th>
-            <th>Poblacion</th>
-            <th>telefono</th> 
+            <th>Numero Pedido</th> 
+            <th>Descripcion</th>  
+            <th>Destinatario</th>
+            <th>Origen</th>
+            <th>Envio urgente</th> 
         </tr>
         <%
-            for (Driver driver : drivers) {
+            for (Parcel parcel : parcels) {
         %>
         <tr>
-            <td><%= driver.getDni()%></td>
-            <td><%= driver.getNombre() %></td>
-            <td><%= driver.getApellidos()%></td>            
-            <td><%= driver.getPoblacion()%></td>
-            <td><%= driver.getTelefono()%></td>
-            <td><a href="myFormPhone.jsp">Editar Telefono</a></td>            
+            <td><%= parcel.getId()%></td>
+            <td><%= parcel.getDescripcion()%></td>
+            <td><%= parcel.getDestinatario()%></td>            
+            <td><%= parcel.getOrigen()%></td>
+            <td><%= parcel.getExpress()%></td>
+            <td><a href="myFormParcel.jsp">Editar Destino</a></td>             
         </tr> 
         <%    
             }
