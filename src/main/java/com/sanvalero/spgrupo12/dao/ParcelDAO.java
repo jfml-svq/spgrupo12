@@ -90,6 +90,26 @@ public class ParcelDAO {
         return parcels;
     }
     
+    public ArrayList<Parcel> searchParcel(String id) throws SQLException {
+
+        String sql = "SELECT IDPAQUETE, DESCRIPCION, DESTINATARIO, ORIGEN FROM PAQUETE WHERE IDPAQUETE = ?";
+        
+        ArrayList<Parcel> parcels = new ArrayList<>();
+        
+        PreparedStatement sentencia = connection.prepareStatement(sql);
+        sentencia.setString(1, id);
+        ResultSet resultado = sentencia.executeQuery();
+        while (resultado.next()) {
+            Parcel newParcels = new Parcel();
+            newParcels.setId(resultado.getInt(1));
+            newParcels.setDescripcion(resultado.getString(2));
+            newParcels.setDestinatario(resultado.getString(3));
+            newParcels.setOrigen(resultado.getString(4));
+            parcels.add(newParcels);
+        }
+        return parcels;
+    }
+    
     
     public ArrayList<Parcel> getParcels (String id) throws SQLException{
         String sql = "SELECT IDPAQUETE, DESCRIPCION, DESTINATARIO, ORIGEN FROM PAQUETE WHERE IDPAQUETE = ?";
