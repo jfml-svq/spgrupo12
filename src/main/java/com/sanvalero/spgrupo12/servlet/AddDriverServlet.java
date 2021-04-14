@@ -37,9 +37,9 @@ public class AddDriverServlet extends HttpServlet {
             driverDAO.addDriver(driver);
             
             PrintWriter out = response.getWriter();
-            response.sendRedirect("myform.jsp?status=ok");
+            response.sendRedirect("myformDriver.jsp?status=ok");
         } catch (SQLException sqle) {
-            response.sendRedirect("myform.jsp?status=error");
+            response.sendRedirect("myformDriver.jsp?status=error");
         }
     }
     

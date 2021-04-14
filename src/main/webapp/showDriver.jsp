@@ -14,27 +14,31 @@
         <h1>Lista de camioneros (con JSP)</h1>
         <%
             DriverDAO driverDAO = new DriverDAO();
-            ArrayList<Driver> drivers = driverDAO.getAllDrivers();
+            ArrayList<Driver> drivers = driverDAO.getDrivers();
         %>
         
         <table border="1">
         <tr>
+            
+            <th>Dni</th>  
             <th>Nombre</th>  
             <th>Apellido</th>
             <th>telefono</th>
-            <th>Elminar</th>
-            <th>Ver detalles</th>
+            <th>poblacion</th>
+            <th>telefono</th>
             
         </tr>
         <%
             for (Driver driver : drivers) {
         %>
         <tr>
+            
+            <td><%= driver.getDni() %></td>
             <td><%= driver.getNombre() %></td>
             <td><%= driver.getApellidos()%></td>
+            <td><%= driver.getPoblacion()%></td>
             <td><%= driver.getTelefono()%></td>
-            <td><a href="remove-driver?dni=<%= driver.getDni() %>">Eliminar</a></li></td>
-            <td><a href="show-driver?dni=<%= driver.getDni() %>">Ver Detalles</a></li></td>
+            
             
         </tr> 
         <%    

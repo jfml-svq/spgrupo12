@@ -95,12 +95,41 @@ public class DriverDAO {
         return drivers;
     }
     
+    
+    
+    
+        public ArrayList<Driver> getDrivers(String dni) throws SQLException {
+
+        String sql = "SELECT DNI, NOMBRE, APELLIDOS, POBLACION, TELEFONO FROM CAMIONERO WHERE DNI = ?";
+        
+        ArrayList<Driver> drivers = new ArrayList<>();        
+        PreparedStatement sentencia = connection.prepareStatement(sql);        
+        sentencia.setString(1,dni);
+        
+        ResultSet resultado = sentencia.executeQuery();
+        while (resultado.next()) {
+            Driver newDrivers = new Driver();
+            newDrivers.setDni(resultado.getString(1));
+            newDrivers.setNombre(resultado.getString(2));
+            newDrivers.setApellidos(resultado.getString(3));
+            newDrivers.setPoblacion(resultado.getString(4));
+            newDrivers.setTelefono(resultado.getString(5));
+            
+            drivers.add(newDrivers);
+        }
+        return drivers;
+        }
     /**
      * Elimina un paquete
      * @param id El id de la pelicula a eliminar
      */
-    public void removeParcel(int id) {
+    public void removeDriver(String dni) throws SQLException {
         
+        String sql = "DELETE FROM CAMIONERO WHERE DNI =  ?";
+
+        PreparedStatement sentencia = connection.prepareStatement(sql);
+        sentencia.setString(1, dni);
+        sentencia.executeUpdate();
     }
     
     /**
@@ -110,6 +139,6 @@ public class DriverDAO {
     public void modifyParcel(Driver driver) {
         
     }
-
+    
 
 }

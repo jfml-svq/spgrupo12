@@ -19,7 +19,8 @@
         <tr>
             <th>Destinatario</th>  
             <th>Origen</th>
-            <th>Eliminar</th>            
+            <th>Eliminar</th>
+            
         </tr>    
         <%
             for (Parcel parcel : parcels) {
