@@ -68,6 +68,16 @@ public class Parcel {
     public void setExpress(String express) {
         this.express = express;
     }
+
+    @Override
+    public String toString() {
+        return "Parcel{" + "idPaquete=" + idPaquete + ", descripcion=" + descripcion + ", destinatario=" + destinatario + ", origen=" + origen + ", express=" + express + '}';
+    }
+
+    public void setIdPaquete(int aInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     
     
 }

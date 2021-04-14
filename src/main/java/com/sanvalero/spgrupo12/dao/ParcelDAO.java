@@ -1,4 +1,3 @@
-
 package com.sanvalero.spgrupo12.dao;
 
 import com.sanvalero.spgrupo12.domain.Parcel;
@@ -94,9 +93,15 @@ public class ParcelDAO {
      * Elimina un paquete
      * @param id El id de la pelicula a eliminar
      */
-    public void removeParcel(int id) {
-        
+    public void removeParcel(String id) throws SQLException {
+         
+        String sql = "DELETE FROM PAQUETE WHERE IDPAQUETE =  ?";
+
+        PreparedStatement sentencia = connection.prepareStatement(sql);
+        sentencia.setString(1, id);
+        sentencia.executeUpdate();
     }
+    
     
     /**
      * Modifica la información de un paquete
