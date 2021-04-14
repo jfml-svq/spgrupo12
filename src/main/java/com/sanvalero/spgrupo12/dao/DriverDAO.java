@@ -1,34 +1,36 @@
 package com.sanvalero.spgrupo12.dao;
 
-import com.sanvalero.spgrupo12.domain.Parcel;
+import com.sanvalero.spgrupo12.domain.Driver;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.sql.ResultSet;
 
-public class ParcelDAO {
+
+
+public class DriverDAO {
 
     private final String DRIVER = "oracle.jdbc.driver.OracleDriver";
-    private final String URL_CONEXION = "jdbc:oracle:thin@localhost:1521:practica";
-    private final String USUARIO = "PRUEBA";
-    private final String CONTRASENA = "PRUEBA";
+    private final String URL_CONEXION = "jdbc:oracle:thin:@localhost:1521:xe";
+    private final String USUARIO = "spgrupo12";
+    private final String CONTRASENA = "spgrupo12";
     
     private Connection connection;
     
     
-    public ParcelDAO() {
+    public DriverDAO() throws SQLException {
         connect();
     }
     
     /**
      * Conecta con la base de datos
      */
-    public void connect() {
+    public void connect() throws SQLException {
         try {
             Class.forName(DRIVER);
-            connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "spgrupo12", "spgrupo12");
+            connection = DriverManager.getConnection(URL_CONEXION, USUARIO, CONTRASENA);
         } catch (ClassNotFoundException cnfe) {
             cnfe.printStackTrace();
         } catch (SQLException sqle) {
@@ -53,40 +55,44 @@ public class ParcelDAO {
      * @throws SQLException 
      */
     
-    public void addParcel(Parcel paquete) throws SQLException {
+    public void addDriver(Driver conductor) throws SQLException {
        
         
-        String sql = "INSERT INTO PAQUETE ( DESCRIPCION, DESTINATARIO, ORIGEN, EXPRES) "
-                + "VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO CAMIONERO ( DNI, NOMBRE, Apellidos, Poblacion,Telefono) "
+                + "VALUES (?, ?, ?, ?,?)";
         
         
         PreparedStatement sentencia = connection.prepareStatement(sql);
         
-        sentencia.setString(1, paquete.getDescripcion());
-        sentencia.setString(2, paquete.getDestinatario());
-        sentencia.setString(3, paquete.getOrigen());
-        sentencia.setString(4, "0");
+        sentencia.setString(1, conductor.getDni());
+        sentencia.setString(2, conductor.getNombre());
+        sentencia.setString(3, conductor.getApellidos());
+        sentencia.setString(4, conductor.getPoblacion());
+        sentencia.setString(5, conductor.getTelefono());
+        
         
         sentencia.executeUpdate();
     }
 
-    public ArrayList<Parcel> getAllParcels() throws SQLException {
+    public ArrayList<Driver> getAllDrivers() throws SQLException {
 
-        String sql = "SELECT IDPAQUETE, DESCRIPCION, DESTINATARIO, ORIGEN FROM PAQUETE";
+        String sql = "SELECT DNI, NOMBRE, APELLIDOS, POBLACION, TELEFONO FROM CAMIONERO";
         
-        ArrayList<Parcel> parcels = new ArrayList<>();
+        ArrayList<Driver> drivers = new ArrayList<>();
         
         PreparedStatement sentencia = connection.prepareStatement(sql);
         ResultSet resultado = sentencia.executeQuery();
         while (resultado.next()) {
-            Parcel newParcels = new Parcel();
-            newParcels.setId(resultado.getInt(1));
-            newParcels.setDescripcion(resultado.getString(2));
-            newParcels.setDestinatario(resultado.getString(3));
-            newParcels.setOrigen(resultado.getString(4));
-            parcels.add(newParcels);
+            Driver newDrivers = new Driver();
+            newDrivers.setDni(resultado.getString(1));
+            newDrivers.setNombre(resultado.getString(2));
+            newDrivers.setApellidos(resultado.getString(3));
+            newDrivers.setPoblacion(resultado.getString(4));
+            newDrivers.setTelefono(resultado.getString(5));
+            
+            drivers.add(newDrivers);
         }
-        return parcels;
+        return drivers;
     }
     
     /**
@@ -101,7 +107,9 @@ public class ParcelDAO {
      * Modifica la información de un paquete
      * @param parcel El paquete con la información a modificar
      */
-    public void modifyParcel(Parcel parcel) {
+    public void modifyParcel(Driver driver) {
         
     }
+
+
 }
