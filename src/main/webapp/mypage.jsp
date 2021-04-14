@@ -7,6 +7,7 @@
     </head>
     <body>
         <h1>My page</h1>
+        <a href="index.html"><p>Volver a inicio </p></a>
         <%
             String message = "Hello";
             out.println("<p>Esto aparece como contenido de la web</p>");

@@ -6,6 +6,7 @@
         <title>My form</title>
     </head>
     <body>
+        <a href="index.html"><p>Volver a inicio </p></a>
         <h1>Ejemplo de formulario web</h1>
         <form method="post" action="add-parcel">
             
