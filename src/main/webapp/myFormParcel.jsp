@@ -1,3 +1,8 @@
+<%-- 
+    Document   : myFormParcel
+    Created on : 14-abr-2021, 18:58:25
+    Author     : Jose
+--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,12 +13,12 @@
     </head>
     <body>
         <a href="index.html"><p>Volver a inicio </p></a>
-        <h1>Modificar telefono camionero</h1>
-        <form method="post" action="edit-phone">
-            DNI
-            <input type="text" name="dni"/><br/> 
-            Nuevo Telefono:
-            <input type="text" name="telefono"/><br/>            
+        <h1>Modificar destinatario paquete</h1>
+        <form method="post" action="edit-destiny">
+            ID
+            <input type="text" name="id"/><br/> 
+            Nuevo Destino:
+            <input type="text" name="destiny"/><br/>            
             <input type="submit" value="Registrar"/>
         </form>
         

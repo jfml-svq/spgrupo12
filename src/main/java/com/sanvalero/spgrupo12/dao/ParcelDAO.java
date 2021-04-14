@@ -1,5 +1,6 @@
 package com.sanvalero.spgrupo12.dao;
 
+import com.sanvalero.spgrupo12.domain.Driver;
 import com.sanvalero.spgrupo12.domain.Parcel;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -89,6 +90,28 @@ public class ParcelDAO {
         return parcels;
     }
     
+    
+    public ArrayList<Parcel> getParcels (String id) throws SQLException{
+        String sql = "SELECT IDPAQUETE, DESCRIPCION, DESTINATARIO, ORIGEN FROM PAQUETE WHERE IDPAQUETE = ?";
+
+        ArrayList<Parcel> parcels = new ArrayList<>();
+
+        PreparedStatement sentencia = connection.prepareStatement(sql);
+        sentencia.setString(1, id);
+        ResultSet resultado = sentencia.executeQuery();
+        while (resultado.next()) {
+            Parcel newParcel = new Parcel();
+            newParcel.setId(resultado.getInt(1));
+            newParcel.setDescripcion(resultado.getString(2));
+            newParcel.setDestinatario(resultado.getString(3));
+            newParcel.setOrigen(resultado.getString(4));
+            newParcel.setExpress(resultado.getString(5));
+
+            parcels.add(newParcel);
+        }
+       return parcels;
+    }
+    
     /**
      * Elimina un paquete
      * @param id El id de la pelicula a eliminar
@@ -107,7 +130,14 @@ public class ParcelDAO {
      * Modifica la información de un paquete
      * @param parcel El paquete con la información a modificar
      */
-    public void modifyParcel(Parcel parcel) {
+    public void modifyParcel(String destiny, String id) throws SQLException {
+            
+        String sql = "UPDATE PAQUETE SET DESTINATARIO  = ? WHERE DNI = ?";
+
+        PreparedStatement sentencia = connection.prepareStatement(sql);
+        sentencia.setString(1, destiny);
+        sentencia.setString(2, id);
+        sentencia.executeUpdate();
         
     }
 }
