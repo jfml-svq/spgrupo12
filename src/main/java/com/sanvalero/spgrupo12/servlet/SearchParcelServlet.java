@@ -15,31 +15,30 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet que elimina una película a la base de datos
  */
-@WebServlet(name = "edit-destiny", urlPatterns = {"/edit-destiny"})
-public class EditParcelDestinyServlet extends HttpServlet {
+@WebServlet(name = "search-parcel", urlPatterns = {"/search-parcel"})
+public class SearchParcelServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException, SQLException {
-              
-        String destiny = (request.getParameter("destiny"));
-        String id = (request.getParameter("id"));
+        String parcel = (request.getParameter("seguimiento"));
         ParcelDAO parcelDAO = new ParcelDAO();
-        
-        try {        
-        parcelDAO.modifyParcel(destiny, id);
-        PrintWriter out = response.getWriter();
-            response.sendRedirect("myFormParcel.jsp?message=destino editado");
+
+        try {
+            parcelDAO.searchParcel(parcel);
+            PrintWriter out = response.getWriter();
+            response.sendRedirect("showParcel.jsp?id=" + parcel);
         } catch (SQLException sqle) {
-            response.sendRedirect("myFormParcel.jsp?message==error");
+            response.sendRedirect("showParcel.jsp?message==error");
         }
+
     }
-    
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             processRequest(req, resp);
         } catch (SQLException ex) {
-            Logger.getLogger(RemoveDriverServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ShowDriverServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -48,7 +47,7 @@ public class EditParcelDestinyServlet extends HttpServlet {
         try {
             processRequest(req, resp);
         } catch (SQLException ex) {
-            Logger.getLogger(RemoveDriverServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ShowDriverServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

@@ -27,9 +27,9 @@
                 status = "";
                 
             if (status.equals("ok")) {
-                out.println("<p style='color:green'>La pelicula se ha registrado con éxito</p>");
+                out.println("<p style='color:green'>La paquete se ha registrado con éxito</p>");
             } else if (status.equals("error")) {
-                out.println("<p style='color:red'>No se ha podido registrar la pelicula</p>");
+                out.println("<p style='color:red'>No se ha podido registrar la paquete</p>");
             }
         %>
     </body>
