@@ -66,7 +66,7 @@ public class ParcelDAO {
         sentencia.setString(1, paquete.getDescripcion());
         sentencia.setString(2, paquete.getDestinatario());
         sentencia.setString(3, paquete.getOrigen());
-        sentencia.setString(4, "0");
+        sentencia.setString(4, "no");
         
         sentencia.executeUpdate();
     }
@@ -105,7 +105,6 @@ public class ParcelDAO {
             newParcel.setDescripcion(resultado.getString(2));
             newParcel.setDestinatario(resultado.getString(3));
             newParcel.setOrigen(resultado.getString(4));
-            newParcel.setExpress(resultado.getString(5));
 
             parcels.add(newParcel);
         }
@@ -114,7 +113,7 @@ public class ParcelDAO {
     
     /**
      * Elimina un paquete
-     * @param id El id de la pelicula a eliminar
+     * @param id El id de la paquete a eliminar
      */
     public void removeParcel(String id) throws SQLException {
          
@@ -132,7 +131,7 @@ public class ParcelDAO {
      */
     public void modifyParcel(String destiny, String id) throws SQLException {
             
-        String sql = "UPDATE PAQUETE SET DESTINATARIO  = ? WHERE DNI = ?";
+        String sql = "UPDATE PAQUETE SET DESTINATARIO = ? WHERE IDPAQUETE = ?";
 
         PreparedStatement sentencia = connection.prepareStatement(sql);
         sentencia.setString(1, destiny);

@@ -1,6 +1,6 @@
 package com.sanvalero.spgrupo12.servlet;
 
-import com.sanvalero.spgrupo12.dao.DriverDAO;
+import com.sanvalero.spgrupo12.dao.ParcelDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -23,14 +23,14 @@ public class EditParcelDestinyServlet extends HttpServlet {
               
         String destiny = (request.getParameter("destiny"));
         String id = (request.getParameter("id"));
-        DriverDAO driverDAO = new DriverDAO();
+        ParcelDAO parcelDAO = new ParcelDAO();
         
         try {        
-        driverDAO.modifyPhone(destiny, id);
+        parcelDAO.modifyParcel(destiny, id);
         PrintWriter out = response.getWriter();
-            response.sendRedirect("myFormPhone.jsp?message=destino editado");
+            response.sendRedirect("myFormParcel.jsp?message=destino editado");
         } catch (SQLException sqle) {
-            response.sendRedirect("myFormPhone.jsp?message==error");
+            response.sendRedirect("myFormParcel.jsp?message==error");
         }
     }
     
