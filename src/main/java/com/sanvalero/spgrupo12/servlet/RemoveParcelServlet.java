@@ -2,6 +2,8 @@ package com.sanvalero.spgrupo12.servlet;
 
 import com.sanvalero.spgrupo12.dao.ParcelDAO;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,11 +18,18 @@ public class RemoveParcelServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws
             ServletException, IOException {
-        int parcel = Integer.parseInt(request.getParameter("id"));
+        String parcel = (request.getParameter("id"));
         ParcelDAO parcelDAO = new ParcelDAO();
-        parcelDAO.removeParcel(parcel);
+                
+        try {
+            parcelDAO.removeParcel(parcel);
+            
+            PrintWriter out = response.getWriter();
+            response.sendRedirect("parcel.jsp?message=Pelicula eliminada");
+        } catch (SQLException sqle) {
+            response.sendRedirect("parcel.jsp?message==error");
+        }
         
-        response.sendRedirect("parcels?message=Pelicula eliminada");
     }
     
     

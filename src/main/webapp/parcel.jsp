@@ -14,18 +14,26 @@
             ParcelDAO paqueteDAO = new ParcelDAO();
             ArrayList<Parcel> parcels = paqueteDAO.getAllParcels();
         %>
-        <ul>
+        
+        <table border="1">
+        <tr>
+            <th>Destinatario</th>  
+            <th>Origen</th>
+            <th>Eliminar</th>            
+        </tr>    
         <%
             for (Parcel parcel : parcels) {
         %>
-        <li><%= parcel.getDestinatario() %></li>
-        <%    
-            %>
-        <li><%= parcel.getOrigen()%></li>
+        <tr>
+            <td><%= parcel.getDestinatario() %></td>
+            <td><%= parcel.getOrigen()%></td>
+            <td><a href="remove-parcel?id=<%= parcel.getId() %>">Eliminar</a></li></td>
+        </tr>  
         <% 
             }
         %>
-        </ul>
+        </table>
+        <a href="index.html"><p>Volver a inicio </p></a>
         <!-- FIXME pelicula de ejemplo (eliminar cuando se desarrolle el listado) 
         <li>Título de ejemplo <a href="remove-movie?id=45">Eliminar</a></li>-->
         <%

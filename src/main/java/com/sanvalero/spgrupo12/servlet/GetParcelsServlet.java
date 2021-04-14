@@ -29,9 +29,10 @@ public class GetParcelsServlet extends HttpServlet {
             for (Parcel parcel : parcels) {
                 out.println("<li>" + parcel.getDescripcion() + " <a href='remove-parcel?id=" + parcel.getId() + "'>Eliminar</a></li>");
             }
+            out.println("<a href=\"index.html\"><p>Volver a inicio </p></a>");
             // FIXME pelicula de ejemplo (eliminar cuando se desarrolle el listado)
-            out.println("<li>Parcel de ejemplo</li> <a href='remove-parcel?id=23'>Eliminar</a></li>");
-            out.println("</ul>");
+            /*out.println("<li>Parcel de ejemplo</li> <a href='remove-parcel?id=23'>Eliminar</a></li>");
+            out.println("</ul>");*/
 
             // Muestra el mensaje (si lo hay)
             String message = request.getParameter("message");
