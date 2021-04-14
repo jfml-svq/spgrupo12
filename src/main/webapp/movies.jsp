@@ -18,10 +18,14 @@
         <%
             for (Parcel parcel : parcels) {
         %>
-        <li><%= parcel.getDestinatario() %></li>
-        <%    
-            %>
-        <li><%= parcel.getOrigen()%></li>
+        <table border="1">
+        <tr>
+            <th>Destinatario</th>    
+            <td><%= parcel.getDestinatario() %></td>
+            <th>Origen</th>
+            <td><%= parcel.getOrigen()%></td>
+        </tr>
+        </table>
         <% 
             }
         %>
