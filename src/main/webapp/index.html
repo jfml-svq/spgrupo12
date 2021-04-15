@@ -3,21 +3,68 @@
     <head>
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+
     </head>
     <body>
-        <h1>Hello World!HOLAAAAA</h1>
-        <img src="images/logo.jpg"/>
-        <p>Accede una <a href="mypage.jsp">página JSP de ejemplo</a></p>
-        <p>Registra un paquete desde <a href="myform.jsp">aqui</a></p>
-        <p>Registra un camionero desde <a href="myformDriver.jsp">aqui</a></p>
-        <p>Desde aqui podrás ver el <a href="driver.jsp">listado drivers (con JSP)</a></p>
-        <p>Desde aqui podrás ver el <a href="parcel.jsp">listado paquetes (con JSP)</a></p>
-        <p>Desde aqui podrás ver el <a href="parcel.jsp">listado paquetes (con JSP)</a></p>
-        <p>Busqueda de paquete por id</p>
-        <form method="post" action="search-parcel">            
-            <input placeholder="Escribe el numero de seguimiento(id)" style="width:225px;" type="text" name="seguimiento"/>
-            <input type="submit" value="Buscar"/>
-        </form>
-        
+        <header>
+            <div class = "zona">
+                <ul>
+                    <li class = "item"><a href="index.html" class="pulsador">HOMEPAGE</a></li>
+                    <li class = "item"><a href="myform.jsp" class="pulsador">FORM PARCEL</a></li>
+                    <li class = "item"><a href="myformDriver.jsp" class="pulsador">FORM DRIVER</a></li>
+                    <li class ="item"><a href="parcel.jsp" class="pulsador">PARCELS</a></li>
+                    <li class ="item"><a href="driver.jsp" class="pulsador">DRIVERS</a></li>
+                </ul>
+            </div>
+            <div class = "busqueda">
+                <h1>FIND YOUR PARCEL</h1>
+                <form method="post" action="search-parcel"> 
+                    <input type="text" name="seguimiento" placeholder="ID PARCEL NUMBER"/>
+                    <input class="boton" type="submit"  value="GO"/>
+                </form>   
+            </div>
+        </header>       
+        <h2>PARCEL SERVICE</h2>
+        <div class="container">
+            <ul class="slider">
+                <li id="slide1">
+                    <img src="images/Imagen1.jpg" alt=""/>
+                </li>
+                <li id="slide2">
+                    <img src="images/Imagen2.jpg" alt=""/>
+                </li>
+                <li id="slide3">
+                    <img src="images/Imagen3.jpg" alt=""/>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li>
+                    <a href="#slide1"></a>
+                </li>
+                <li>
+                    <a href="#slide2"></a>
+                </li>
+                <li>
+                    <a href="#slide3"></a>
+                </li>
+            </ul>
+        </div>
+        <div class ="garantia">
+            <h3>TOTAL DELIVERY GUARANTEE</h3>
+            <p>
+                At PARCEL SERVICE we have been working more than 25 years to be able to offer the best service. Throughout all this time we have grown and, thanks to constant innovation and the work of our team of professionals, we have managed to maintain a high degree of satisfaction among our clients.</p>
+        </div>     
+        <footer>
+            <div class="redes-sociales">
+                <h4>OUR SOCIAL MEDIA:</h4>
+                <ul>
+                    <li class="redes"><a href=""><img src="images/facebook.png" alt=""></a></li>
+                    <li class="redes"><a href=""><img src="images/instagram.png" alt=""></a></li>
+                    <li class="redes"><a href=""><img src="images/youtube.png" alt=""></a></li>
+                    <li class="redes"><a href=""><img src="images/gorjeo.png" alt=""></a></li>
+                </ul>
+            </div>
+        </footer>             
     </body>
 </html>
