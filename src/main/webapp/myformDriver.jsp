@@ -2,7 +2,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="css/estilosFormularios.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
         <link href="css/estilosDriver.css" rel="stylesheet" type="text/css"/>
             
         <title>My formDriver</title>
@@ -11,12 +14,12 @@
         <header>
             <div class = "zona">
                 <ul>
-                    <li class = "item"><a href="index.html"class=""pulsador>HOMEPAGE</a></li>
-                    <li class = "item"><a href="myform.jsp"class="pulsador">FORM PARCEL</a></li>
-                    <li class = "item"><a href="myformDriver.jsp"class="pulsador">FORM DRIVER</a></li>
-                    <li class ="item"><a href="parcel.jsp"class="pulsador">PARCELS</a></li>
-                    <li class ="item"><a href="driver.jsp"class="pulsador">DRIVERS</a></li>
+                    <li class = "item"><a href="index.html" class="pulsador">HOMEPAGE</a></li>
+                    <li class = "item"><a href="myform.jsp" class="pulsador">ADD PARCEL</a></li>
+                    <li class ="item"><a href="parcel.jsp" class="pulsador">PARCELS</a></li>
+                    <li class ="item"><a href="driver.jsp" class="pulsador">DRIVERS</a></li>
                 </ul>
+                    <img class="camion" src="images/Logo cooporativo.png" alt=""/>
             </div>   
             <div class = "busqueda">
                 <h1>FIND YOUR PARCEL</h1>
@@ -48,9 +51,9 @@
                 status = "";
                 
             if (status.equals("ok")) {
-                out.println("<p style='color:green'>La pelicula se ha registrado con éxito</p>");
+                out.println("<p style='color:green'>The driver has been successfully registered</p>");
             } else if (status.equals("error")) {
-                out.println("<p style='color:red'>No se ha podido registrar la pelicula</p>");
+                out.println("<p style='color:red'>The driver has not been registered</p>");
             }
         %>
         <footer>

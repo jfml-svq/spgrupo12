@@ -1,14 +1,20 @@
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 h1{
     font-size: 20px;
+    font-family: 'Oswald', sans-serif;
 }
 .zona{
-    margin-top: 20px;
-    display:flex;
+    max-width: 100%;
+    background:#f09e41;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    height: 100px;
 }
 .zona li{
     display: block;
@@ -25,36 +31,48 @@ h1{
     color: white;
     transition: 0.5s all;
 }
-.zona li.item{
-    font-family:'Times New Roman', Times, serif;
+.item{
+    font-family: 'Oswald', sans-serif;
     width: 150px;
     height: 25px;
     text-align: center;
     list-style: none;
     float:left;
+    display: block;
+    text-decoration: none;
+    margin-left: 6px;
+    margin-right: 10px;
+}
+.camion{
+    padding-top: 25px;
+    margin: 20px;
+    width: 150px;
+    align-items: center;
+}
+.titulo{
+    color: white;
+    background-color: grey;
 }
 h2{
-    margin-top: 10px;
+    margin-left:250px ;
     margin-bottom: 10px;
     height: 75px;
     padding: 10px;
     text-align: center;
-    font-size: 50px;
-    color: white;
-    background-color: grey;
+    font-size: 50px;  
 }
 .busqueda{
     margin: 10px;
-    width: 300px;
+    width: auto;
     position: relative;
-    margin-left: 1550px;
+    float: right;
 }
 .boton{
     display: inline-block;
     width:50px;
     text-decoration: none;
     border: 1px solid black;
-    border-radius:100px;
+    border-radius:50px;
 }
 .container{
     padding: 10px;
@@ -79,6 +97,8 @@ ul.slider li img{
     width: 100%;
     height:500px;
     object-fit: cover;
+    align-items: center;
+    display: block;
 }
 ul.slider li:first-child{
     opacity: 1;
@@ -107,8 +127,8 @@ ul.slider li:target{
 }
 .garantia{
     padding: 10px;
-    background-color: black;
-    color: white;
+    background-color: rgb(2,56,103);
+    color: rgb(153,153,153);
 }
 h3{
     padding: 10px;
