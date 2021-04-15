@@ -107,7 +107,6 @@ public class ParcelDAO {
             newParcels.setDestinatario(resultado.getString(3));
             newParcels.setOrigen(resultado.getString(4));   
             newParcels.setExpress(resultado.getString(5));   
-            
             parcels.add(newParcels);
         }
         return parcels;
@@ -129,7 +128,6 @@ public class ParcelDAO {
             newParcel.setDestinatario(resultado.getString(3));
             newParcel.setOrigen(resultado.getString(4));
             newParcel.setExpress(resultado.getString(5));
-
             parcels.add(newParcel);
         }
        return parcels;
