@@ -85,7 +85,7 @@ public class ParcelDAO {
             newParcels.setDescripcion(resultado.getString(2));
             newParcels.setDestinatario(resultado.getString(3));
             newParcels.setOrigen(resultado.getString(4));
-            newParcels.setExpress(resultado.getString(5));
+            newParcels.setExpress(resultado.getString(5));  
             parcels.add(newParcels);
         }
         return parcels;
@@ -105,8 +105,8 @@ public class ParcelDAO {
             newParcels.setId(resultado.getInt(1));
             newParcels.setDescripcion(resultado.getString(2));
             newParcels.setDestinatario(resultado.getString(3));
-            newParcels.setOrigen(resultado.getString(4));
-            newParcels.setExpress(resultado.getString(5));
+            newParcels.setOrigen(resultado.getString(4));   
+            newParcels.setExpress(resultado.getString(5));   
             parcels.add(newParcels);
         }
         return parcels;
