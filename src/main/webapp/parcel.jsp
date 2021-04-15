@@ -29,14 +29,16 @@
                     <input class="boton" type="submit"  value="GO"/>
                 </form>   
             </div>
-        </header>       
-        <h2>PARCEL SERVICE</h2>        
+        </header>  
+        <div class ="titulo">
+        <h2>PARCEL SERVICE</h2>
+        </div>
         <%
             ParcelDAO paqueteDAO = new ParcelDAO();
             ArrayList<Parcel> parcels = paqueteDAO.getAllParcels();
         %>
         <h3>PARCELS LIST</h3>
-        <table border="1">
+        <table class="formulario">
         <tr>
             <th>Parcel number</th>
             <th>Addresse</th>  
@@ -53,7 +55,7 @@
             <td><%= parcel.getDestinatario() %></td>
             <td><%= parcel.getOrigen()%></td>            
             <td><a href="show-parcel?id=<%= parcel.getId() %>">Show details</a></td>
-            <td><a href="remove-parcel?id=<%= parcel.getId() %>">Delete</a><</td>
+            <td><a href="remove-parcel?id=<%= parcel.getId() %>">Delete</a></td>
         </tr>  
         <% 
             }

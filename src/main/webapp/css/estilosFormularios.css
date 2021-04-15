@@ -75,7 +75,12 @@ h2{
     border-radius:100px;
 }
 h3{
-    margin:10px;
+
+    margin-bottom: 10px;
+    height: 75px;
+    padding: 30px;
+    text-align: center;
+    font-size: 50px;  
 }
 .formulario{
     padding: 30px;

@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-        <link href="css/estilosDriver.css" rel="stylesheet" type="text/css"/>
+        <link href="css/Formularios.css" rel="stylesheet" type="text/css"/>
             
         <title>My formDriver</title>
     </head>
@@ -27,7 +27,9 @@
                     <input class="boton" type="submit" value="GO" />
             </div>        
     </header>
-        <h2>PARCEL SERVICE</h2>
+        <div class ="titulo">
+        <h2>DRIVER SERVICE</h2>
+        </div>
         <div class="formulario">
             <h3>FORM DRIVER</h3>
             <form method="post" action="add-driver">
