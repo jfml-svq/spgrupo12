@@ -31,8 +31,10 @@
             </div>   
             <div class = "busqueda">
                 <h1>FIND YOUR PARCEL</h1>
-                <input type="text" id="s" value="" placeholder="ID PARCEL NUMBER"  />
-                <input class="boton" type="submit" value="GO" />
+                <form method="post" action="search-parcel"> 
+                    <input type="text" name="seguimiento" placeholder="ID PARCEL NUMBER"/>
+                    <input class="boton" type="submit"  value="GO"/>
+                </form>   
             </div>
         </header>   
         <h2>PARCEL SERVICE</h2>

@@ -5,7 +5,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="css/estilosDriverList.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilosFormularios.css" rel="stylesheet" type="text/css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>DRIVERS LIST</title>
     </head>
@@ -18,6 +20,7 @@
                     <li class ="item"><a href="parcel.jsp" class="pulsador">PARCELS</a></li>
                     <li class ="item"><a href="driver.jsp" class="pulsador">DRIVERS</a></li>
                 </ul>
+                 <img class="camion" src="images/Logo cooporativo.png" alt=""/>
             </div>
             <div class = "busqueda">
                 <h1>FIND YOUR PARCEL</h1>
@@ -26,14 +29,18 @@
                     <input class="boton" type="submit"  value="GO"/>
                 </form>   
             </div>
-        </header>  
+        </header>
+        <div class ="titulo">
         <h2>PARCEL SERVICE</h2>
+        </div>
         <%
             DriverDAO driverDAO = new DriverDAO();
             ArrayList<Driver> drivers = driverDAO.getAllDrivers();
         %>
+        
         <h3>DRIVERS LIST</h3>
-        <table border='2'>
+        <table class="formulario_2">
+
         <tr>
             <th>Name</th>  
             <th>Surname</th>

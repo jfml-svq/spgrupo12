@@ -24,13 +24,16 @@
                         <img class="camion" src="images/Logo cooporativo.png" alt=""/>
                 </div>
                 <div class = "busqueda">
-                    <h1>FIND YOUR PARCEL</h1>
-                        <input type="text" id="s" value="" placeholder="ID PARCEL NUMBER"  />
-                        <input class="boton" type="submit" value="GO" />
+                <h1>FIND YOUR PARCEL</h1>
+                <form method="post" action="search-parcel"> 
+                    <input type="text" name="seguimiento" placeholder="ID PARCEL NUMBER"/>
+                    <input class="boton" type="submit"  value="GO"/>
+                </form>   
                 </div>
         </header>
+        <div class ="titulo">
         <h2>PARCEL SERVICE</h2>
-        
+        </div>
         <% String id = request.getParameter("id"); %>
         <%  
             ParcelDAO parcelDAO = new ParcelDAO();
@@ -39,7 +42,7 @@
         
         <h3>LIST OF PARCELS DETAILS</h3>
         
-        <table border='2'>
+        <table class="formulario_3">
         <tr>
             <th>Numero Pedido</th> 
             <th>Descripcion</th>  
