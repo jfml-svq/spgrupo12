@@ -29,9 +29,9 @@
         <tr>
             <td><%= parcel.getId() %></td>
             <td><%= parcel.getDestinatario() %></td>
-            <td><%= parcel.getOrigen()%></td>
+            <td><%= parcel.getOrigen()%></td>            
             <td><a href="show-parcel?id=<%= parcel.getId() %>">Ver detalles</a></td>
-            <td><a href="remove-parcel?id=<%= parcel.getId() %>">Eliminar</a></li></td>
+            <td><a href="remove-parcel?id=<%= parcel.getId() %>">Eliminar</a><</td>
         </tr>  
         <% 
             }

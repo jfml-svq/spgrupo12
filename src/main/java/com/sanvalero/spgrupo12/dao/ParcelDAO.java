@@ -66,14 +66,14 @@ public class ParcelDAO {
         sentencia.setString(1, paquete.getDescripcion());
         sentencia.setString(2, paquete.getDestinatario());
         sentencia.setString(3, paquete.getOrigen());
-        sentencia.setString(4, "no");
+        sentencia.setString(4, paquete.getExpress());
         
         sentencia.executeUpdate();
     }
 
     public ArrayList<Parcel> getAllParcels() throws SQLException {
 
-        String sql = "SELECT IDPAQUETE, DESCRIPCION, DESTINATARIO, ORIGEN FROM PAQUETE";
+        String sql = "SELECT IDPAQUETE, DESCRIPCION, DESTINATARIO, ORIGEN, EXPRES FROM PAQUETE";
         
         ArrayList<Parcel> parcels = new ArrayList<>();
         
@@ -85,6 +85,7 @@ public class ParcelDAO {
             newParcels.setDescripcion(resultado.getString(2));
             newParcels.setDestinatario(resultado.getString(3));
             newParcels.setOrigen(resultado.getString(4));
+            newParcels.setExpress(resultado.getString(5));  
             parcels.add(newParcels);
         }
         return parcels;
@@ -92,7 +93,7 @@ public class ParcelDAO {
     
     public ArrayList<Parcel> searchParcel(String id) throws SQLException {
 
-        String sql = "SELECT IDPAQUETE, DESCRIPCION, DESTINATARIO, ORIGEN FROM PAQUETE WHERE IDPAQUETE = ?";
+        String sql = "SELECT IDPAQUETE, DESCRIPCION, DESTINATARIO, ORIGEN, EXPRES FROM PAQUETE WHERE IDPAQUETE = ?";
         
         ArrayList<Parcel> parcels = new ArrayList<>();
         
@@ -104,7 +105,8 @@ public class ParcelDAO {
             newParcels.setId(resultado.getInt(1));
             newParcels.setDescripcion(resultado.getString(2));
             newParcels.setDestinatario(resultado.getString(3));
-            newParcels.setOrigen(resultado.getString(4));
+            newParcels.setOrigen(resultado.getString(4));   
+            newParcels.setExpress(resultado.getString(5));   
             parcels.add(newParcels);
         }
         return parcels;
@@ -112,7 +114,7 @@ public class ParcelDAO {
     
     
     public ArrayList<Parcel> getParcels (String id) throws SQLException{
-        String sql = "SELECT IDPAQUETE, DESCRIPCION, DESTINATARIO, ORIGEN FROM PAQUETE WHERE IDPAQUETE = ?";
+        String sql = "SELECT IDPAQUETE, DESCRIPCION, DESTINATARIO, ORIGEN, EXPRES FROM PAQUETE WHERE IDPAQUETE = ?";
 
         ArrayList<Parcel> parcels = new ArrayList<>();
 
@@ -125,7 +127,7 @@ public class ParcelDAO {
             newParcel.setDescripcion(resultado.getString(2));
             newParcel.setDestinatario(resultado.getString(3));
             newParcel.setOrigen(resultado.getString(4));
-
+            newParcel.setExpress(resultado.getString(5));
             parcels.add(newParcel);
         }
        return parcels;

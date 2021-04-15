@@ -16,7 +16,7 @@
             <input type="text" name="nombre"/><br/>
             Apellidos:
             <input type="text" name="apellidos"/><br/>
-            Origen
+            Población:
             <input type="text" name="poblacion"/><br/>
             Telefono:
             <input type="text" name="telefono"/><br/>            
