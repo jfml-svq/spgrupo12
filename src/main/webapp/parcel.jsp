@@ -40,7 +40,8 @@
             <th>Origin</th>
             <th>Show details</th>
             <th>Delete</th>            
-        </tr>    
+        </tr>
+        
         <%
             for (Parcel parcel : parcels) {
         %>
@@ -65,6 +66,7 @@
         <%        
             }
         %>
+        </table>
         <footer>
             <div class="redes-sociales">
                 <h4>OUR SOCIAL MEDIA:</h4>

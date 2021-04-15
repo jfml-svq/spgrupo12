@@ -33,7 +33,7 @@
             ArrayList<Driver> drivers = driverDAO.getAllDrivers();
         %>
         <h3>DRIVERS LIST</h3>
-        <table border="1">
+        <table border='2'>
         <tr>
             <th>Name</th>  
             <th>Surname</th>
@@ -41,6 +41,7 @@
             <th>Show details</th>
             <th>Delete</th>            
         </tr>
+        
         <%
             for (Driver driver : drivers) {
         %>
@@ -49,9 +50,9 @@
             <td><%= driver.getApellidos()%></td>
             <td><%= driver.getTelefono()%></td>
             <td><a href="show-driver?dni=<%= driver.getDni() %>">Show details</a></td>
-            <!--<td><a href="showDriver.jsp">Ver mas</a></td>-->
             <td><a href="remove-driver?dni=<%= driver.getDni() %>">Delete</a></td>
-        </tr> 
+        </tr>
+        
         <%    
             }
         %>
@@ -66,6 +67,7 @@
         <%        
             }
         %>
+        </table>
         <footer>
             <div class="redes-sociales">
                 <h4>OUR SOCIAL MEDIA:</h4>

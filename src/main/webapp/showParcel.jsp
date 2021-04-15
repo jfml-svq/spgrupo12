@@ -1,4 +1,3 @@
-
 <%@page import="com.sanvalero.spgrupo12.domain.Parcel"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.sanvalero.spgrupo12.dao.ParcelDAO"%>
@@ -6,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="css/estilosShowParcel.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilosShowDriver.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>PARCEL DETAILS</title>
     </head>
@@ -14,13 +13,13 @@
         <header>
                 <div class = "zona">
                     <ul>
-                        <li class = "item"><a href="index.html"class=""pulsador>HOMEPAGE</a></li>
-                        <li class = "item"><a href="myform.jsp"class="pulsador">FORM PARCEL</a></li>
-                        <li class = "item"><a href="myformDriver.jsp"class="pulsador">FORM DRIVER</a></li>
-                        <li class ="item"><a href="parcel.jsp"class="pulsador">PARCELS</a></li>
-                        <li class ="item"><a href="driver.jsp"class="pulsador">DRIVERS</a></li>
+                        <li class = "item"><a href="index.html" class="pulsador">HOMEPAGE</a></li>
+                        <li class = "item"><a href="myform.jsp" class="pulsador">FORM PARCEL</a></li>
+                        <li class = "item"><a href="myformDriver.jsp" class="pulsador">FORM DRIVER</a></li>
+                        <li class ="item"><a href="parcel.jsp" class="pulsador">PARCELS</a></li>
+                        <li class ="item"><a href="driver.jsp" class="pulsador">DRIVERS</a></li>
                     </ul>
-                </div>   
+                </div>
                 <div class = "busqueda">
                     <h1>FIND YOUR PARCEL</h1>
                         <input type="text" id="s" value="" placeholder="ID PARCEL NUMBER"  />
@@ -34,8 +33,10 @@
             ParcelDAO parcelDAO = new ParcelDAO();
             ArrayList<Parcel> parcels = parcelDAO.getParcels(id);
         %>
+        
         <h3>LIST OF PARCELS DETAILS</h3>
-        <table border="1">
+        
+        <table border='2'>
         <tr>
             <th>Numero Pedido</th> 
             <th>Descripcion</th>  
@@ -53,7 +54,8 @@
             <td><%= parcel.getOrigen()%></td>
             <td><%= parcel.getExpress()%></td>
             <td><a href="myFormParcel.jsp">Editar Destino</a></td>             
-        </tr> 
+        </tr>
+        
         <%    
             }
         %>
@@ -68,6 +70,10 @@
         <%        
             }
         %>
+        
+        
+        </table>
+        
         <footer>
             <div class="redes-sociales">
                 <h4>OUR SOCIAL MEDIA:</h4>

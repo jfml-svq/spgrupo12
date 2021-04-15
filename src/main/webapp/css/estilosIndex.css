@@ -1,14 +1,26 @@
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
+/*VARIALES*/
+:root {
+    --dark-blue-color: rgb(0 31 51);
+    --white-color: rgb(255 215 208);
+    --menu-border: 3px solid var(--dark-blue-color);
+}
+
 h1{
     font-size: 20px;
 }
 .zona{
-    margin-top: 20px;
-    display:flex;
+    max-width: 100%;
+    background: #f09e41;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    height: 100px;
 }
 .zona li{
     display: block;
@@ -25,16 +37,19 @@ h1{
     color: white;
     transition: 0.5s all;
 }
-.zona li.item{
+.item{
     font-family:'Times New Roman', Times, serif;
     width: 150px;
     height: 25px;
     text-align: center;
     list-style: none;
     float:left;
+    display: block;
+    text-decoration: none;
+    margin-left: 6px;
+    margin-right: 10px;
 }
 h2{
-    margin-top: 10px;
     margin-bottom: 10px;
     height: 75px;
     padding: 10px;
@@ -45,9 +60,9 @@ h2{
 }
 .busqueda{
     margin: 10px;
-    width: 300px;
+    width: auto;
     position: relative;
-    margin-left: 1550px;
+    float: right;
 }
 .boton{
     display: inline-block;

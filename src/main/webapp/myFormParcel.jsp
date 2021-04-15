@@ -16,11 +16,11 @@
         <header>
             <div class = "zona">
                 <ul>
-                    <li class = "item"><a href="index.html"class=""pulsador>HOMEPAGE</a></li>
-                    <li class = "item"><a href="myform.jsp"class="pulsador">FORM PARCEL</a></li>
-                    <li class = "item"><a href="myformDriver.jsp"class="pulsador">FORM DRIVER</a></li>
-                    <li class ="item"><a href="parcel.jsp"class="pulsador">PARCELS</a></li>
-                    <li class ="item"><a href="driver.jsp"class="pulsador">DRIVERS</a></li>
+                    <li class = "item"><a href="index.html" class="pulsador">HOMEPAGE</a></li>
+                    <li class = "item"><a href="myform.jsp" class="pulsador">FORM PARCEL</a></li>
+                    <li class = "item"><a href="myformDriver.jsp" class="pulsador">FORM DRIVER</a></li>
+                    <li class ="item"><a href="parcel.jsp" class="pulsador">PARCELS</a></li>
+                    <li class ="item"><a href="driver.jsp" class="pulsador">DRIVERS</a></li>
                 </ul>
             </div>   
             <div class = "busqueda">
@@ -50,6 +50,7 @@
         <%        
             }
         %>
+        
         <footer>
             <div class="redes-sociales">
                 <h4>OUR SOCIAL MEDIA:</h4>
