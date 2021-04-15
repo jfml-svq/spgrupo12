@@ -7,11 +7,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
-        <title>Listado de peliculas</title>
+        <title>LISTADO DE CAMIONEROS</title>
     </head>
     <body>
-        <a href="index.html"><p>Volver a inicio </p></a>
-        <h1>Lista de camioneros (con JSP)</h1>
+       
+        <h1>Lista de camioneros</h1>
         <%
             DriverDAO driverDAO = new DriverDAO();
             ArrayList<Driver> drivers = driverDAO.getAllDrivers();
