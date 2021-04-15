@@ -56,7 +56,7 @@
             <td><%= parcel.getDestinatario()%></td>            
             <td><%= parcel.getOrigen()%></td>
             <td><%= parcel.getExpress()%></td>
-            <td><a href="myFormParcel.jsp">Editar Destino</a></td>             
+            <td><a href="myFormParcel.jsp?id=<%= parcel.getId() %>">Editar Destino</a></td>             
         </tr>
         
         <%    
