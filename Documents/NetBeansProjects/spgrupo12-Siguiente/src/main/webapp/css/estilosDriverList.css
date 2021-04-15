@@ -1,0 +1,73 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+h1{
+    font-size: 20px;
+}
+.zona{
+    margin-top: 20px;
+    display:flex;
+    align-items: center;
+}
+.zona li{
+    display: block;
+}
+.zona a{
+    color: black;
+    text-decoration: none;
+}
+.zona a.hover{
+    text-decoration: underline;
+    background-color: white;
+}
+.zona:hover{
+    color: white;
+    transition: 0.5s all;
+}
+.zona li.item{
+    font-family:'Times New Roman', Times, serif;
+    width: 150px;
+    height: 25px;
+    text-align: center;
+    list-style: none;
+    float:left;
+}
+h2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 75px;
+    padding: 10px;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    background-color: grey;
+}
+.busqueda{
+    margin: 10px;
+    width: 300px;
+    position: relative;
+    margin-left: 1550px;
+}
+.boton{
+    display: inline-block;
+    width:50px;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius:100px;
+}
+h4{
+    margin: 10px;
+}
+.redes-sociales{
+    background-color: grey;
+    padding:30px;
+    position: relative;
+    margin-top: 250px;
+}
+.redes-sociales li.redes{
+    width: 100px;
+    list-style: none;
+    float: left; 
+    
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="css/estilosIndex.css" rel="stylesheet" type="text/css"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class = "zona">
+                    <ul>
+                        <li class = "item"><a href="myform.jsp" class="pulsador">ADD PARCEL</a></li>
+                        <li class = "item"><a href="myformDriver.jsp" class="pulsador">ADD DRIVER</a></li>
+                        <li class ="item"><a href="parcel.jsp" class="pulsador">PARCELS</a></li>
+                        <li class ="item"><a href="driver.jsp" class="pulsador">DRIVERS</a></li>
+                    </ul>
+                    <img class="camion" src="images/Logo cooporativo.png" alt=""/>
+                </div>
+            </nav>
+            <div class = "busqueda">
+                <h1>FIND YOUR PARCEL</h1>
+                <form method="post" action="search-parcel"> 
+                    <input type="text" name="seguimiento" placeholder="ID PARCEL NUMBER"/>
+                    <input class="boton" type="submit"  value="GO"/>
+                </form>   
+            </div>
+        </header>
+        <div class = "titulo">
+            <h2>PARCEL SERVICE</h2>
+        </div>       
+        <div class="container">
+            <ul class="slider">
+                <li id="slide1">
+                    <img src="images/Imagen1.jpg" alt=""/>
+                </li>
+                <li id="slide2">
+                    <img src="images/Imagen2.jpg" alt=""/>
+                </li>
+                <li id="slide3">
+                    <img src="images/Imagen3.jpg" alt=""/>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li>
+                    <a href="#slide1"></a>
+                </li>
+                <li>
+                    <a href="#slide2"></a>
+                </li>
+                <li>
+                    <a href="#slide3"></a>
+                </li>
+            </ul>
+        </div>
+        <div class ="garantia">
+            <h3>TOTAL DELIVERY GUARANTEE</h3>
+            <p>At PARCEL SERVICE we have been working more than 25 years to be able to offer the best service. Throughout all this time we have grown and, thanks to constant innovation and the work of our team of professionals, we have managed to maintain a high degree of satisfaction among our clients.</p>
+        </div>     
+        <footer>
+            <div class="redes-sociales">
+                <h4>OUR SOCIAL MEDIA:</h4>
+                <ul>
+                    <li class="redes"><a href=""><img src="images/facebook.png" alt=""></a></li>
+                    <li class="redes"><a href=""><img src="images/instagram.png" alt=""></a></li>
+                    <li class="redes"><a href=""><img src="images/youtube.png" alt=""></a></li>
+                    <li class="redes"><a href=""><img src="images/gorjeo.png" alt=""></a></li>
+                </ul>
+            </div>
+        </footer>           
+    </body>
+</html>
