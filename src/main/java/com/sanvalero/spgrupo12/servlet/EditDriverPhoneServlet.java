@@ -28,7 +28,7 @@ public class EditDriverPhoneServlet extends HttpServlet {
         try {        
         driverDAO.modifyPhone(telefono, dni);
         PrintWriter out = response.getWriter();
-            response.sendRedirect("myFormPhone.jsp?message=Telefono editado");
+            response.sendRedirect("driver.jsp");
         } catch (SQLException sqle) {
             response.sendRedirect("myFormPhone.jsp?message==error");
         }

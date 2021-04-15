@@ -43,8 +43,9 @@
             %>
             <%                for (Driver driver : drivers) {
             %>
-            <h3>CHANGE DRIVER PHONE:</h3>
+            
         <div class ="formulario">
+            <h5>CHANGE DRIVER PHONE:</h5>
             <form method="post" action="edit-phone">
                 <p>Identification Document: <%= driver.getDni()%></p>                
                 <%

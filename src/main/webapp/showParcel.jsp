@@ -42,7 +42,7 @@
         
         <h3>LIST OF PARCELS DETAILS</h3>
         
-        <table class="formulario_3">
+        <table class="formulario_2">
         <tr>
             <th>Numero Pedido</th> 
             <th>Descripcion</th>  

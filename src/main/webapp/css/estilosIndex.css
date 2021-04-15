@@ -3,6 +3,24 @@
     padding: 0px;
     box-sizing: border-box;
 }
+body {
+	background: linear-gradient(-45deg, #f09e41, #999999,#023567, 
+	#548c9d);
+	background-size: 400% 400%;
+	animation: gradient 20s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 h1{
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
@@ -147,6 +165,9 @@ h3{
 }
 h4{
     margin: 5px;
+    text-align: center;
+    color: #f09e41;
+    margin-bottom: 5px;
 }
 .output {
    display: inline-block;
@@ -157,8 +178,18 @@ h4{
    height: 40px;
    margin-top: 30px;
 }
-.redes-sociales li.redes{
-    width: 100px;
+.redes-sociales li{
     list-style: none;
     float: left; 
+    position: relative;
+    margin-left: 350px;
+}
+@media (prefers-color-scheme: dark) {
+  img {
+    opacity: .75;
+    transition: opacity .5s ease-in-out;
+  }
+  img:hover {
+    opacity: 1;
+  }
 }

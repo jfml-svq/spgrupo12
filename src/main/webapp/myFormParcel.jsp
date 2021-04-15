@@ -36,9 +36,11 @@
                     <input class="boton" type="submit"  value="GO"/>
                 </form>   
             </div>
-        </header>   
-        <h2>PARCEL SERVICE</h2>
-        <div class ="formulario">
+        </header>
+        <div class ="titulo">
+            <h2>PARCEL SERVICE</h2>
+        </div>
+        
             <% String id = request.getParameter("id"); %>
             <%
                 ParcelDAO parcelDAO = new ParcelDAO();
@@ -47,9 +49,10 @@
             %>
             <%                for (Parcel parcel : parcels) {
             %>    
-            <h3>CHANGE PARCEL ADDRESSEE:</h3>
+            
+            <div class ="formulario">
+            <h5>CHANGE PARCEL ADDRESSEE:</h5>
             <form method="post" action="edit-destiny">
-                
                 <p>Order number: <%= parcel.getId()%></p>
                 <%
                     }
@@ -60,7 +63,7 @@
                 <input class="control" type="text" name="destiny"/><br/>            
                 <input class="output" type="submit" value="Register"/>
             </form>
-        </div>
+            </div>
 
         <%
             // Muestra el mensaje (si lo hay)
@@ -71,7 +74,6 @@
         <%
             }
         %>
-
         <footer>
             <div class="redes-sociales">
                 <h4>OUR SOCIAL MEDIA:</h4>
