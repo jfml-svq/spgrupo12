@@ -26,13 +26,16 @@
             </div>   
             <div class = "busqueda">
                 <h1>FIND YOUR PARCEL</h1>
-                <input type="text" id="s" value="" placeholder="ID PARCEL NUMBER"  />
-                <input class="boton" type="submit" value="GO" />
+                <form method="post" action="search-parcel"> 
+                    <input type="text" name="seguimiento" placeholder="ID PARCEL NUMBER"/>
+                    <input class="boton" type="submit"  value="GO"/>
+                </form>   
             </div>
         </header>
+        <div class ="titulo">
         <h2>PARCEL SERVICE</h2>
+        </div>
 
-        <div class ="formulario">
             <% String dni = request.getParameter("dni"); %>
             <%
                 DriverDAO driverDAO = new DriverDAO();
@@ -40,7 +43,9 @@
             %>
             <%                for (Driver driver : drivers) {
             %>
-            <h3>CHANGE DRIVER PHONE:</h3>
+            
+        <div class ="formulario">
+            <h5>CHANGE DRIVER PHONE:</h5>
             <form method="post" action="edit-phone">
                 <p>Identification Document: <%= driver.getDni()%></p>                
                 <%

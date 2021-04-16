@@ -38,7 +38,7 @@
             ArrayList<Parcel> parcels = paqueteDAO.getAllParcels();
         %>
         <h3>PARCELS LIST</h3>
-        <table class="formulario">
+        <table class="formulario_2">
         <tr>
             <th>Parcel number</th>
             <th>Addresse</th>  

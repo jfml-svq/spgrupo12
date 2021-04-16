@@ -21,8 +21,10 @@
             </div>   
             <div class = "busqueda">
                 <h1>FIND YOUR PARCEL</h1>
-                    <input type="text" id="s" value="" placeholder="ID PARCEL NUMBER"  />
-                    <input class="boton" type="submit" value="GO" />
+                <form method="post" action="search-parcel"> 
+                    <input type="text" name="seguimiento" placeholder="ID PARCEL NUMBER"/>
+                    <input class="boton" type="submit"  value="GO"/>
+                </form>   
             </div>
     </header>
         <div class ="titulo">
@@ -39,7 +41,7 @@
                 <input class ="control" type="text" name="origen"/><br/>
                 <p>Express:</p>
                 <input class ="control" type="text" name="express"/><br/>            
-                <input class ="register" type="submit" value="Register"/>
+                <input class ="output" type="submit" value="Register"/>
             </form>
         </div>
         

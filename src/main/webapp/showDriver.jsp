@@ -24,20 +24,23 @@
                         <img class="camion" src="images/Logo cooporativo.png" alt=""/>
                 </div>   
                 <div class = "busqueda">
-                    <h1>FIND YOUR PARCEL</h1>
-                        <input type="text" id="s" value="" placeholder="ID PARCEL NUMBER"  />
-                        <input class="boton" type="submit" value="GO" />
+                <h1>FIND YOUR PARCEL</h1>
+                <form method="post" action="search-parcel"> 
+                    <input type="text" name="seguimiento" placeholder="ID PARCEL NUMBER"/>
+                    <input class="boton" type="submit"  value="GO"/>
+                </form>   
                 </div>
         </header>
-        <h2>DRIVER SERVICE</h2>
-
+        <div class ="titulo">
+            <h2>DRIVER SERVICE</h2>
+        </div>
         <% String dni = request.getParameter("dni"); %>
         <%  
             DriverDAO driverDAO = new DriverDAO();
             ArrayList<Driver> drivers = driverDAO.getDrivers(dni);
         %>
         <h3>LIST OF DRIVERS DETAILS</h3>
-        <table border='2'>
+        <table class="formulario_2">
         <tr>
             <th>Identification Document:</th>
             <th>Name</th>  

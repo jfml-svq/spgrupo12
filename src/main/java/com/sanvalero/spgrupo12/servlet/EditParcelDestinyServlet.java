@@ -28,7 +28,7 @@ public class EditParcelDestinyServlet extends HttpServlet {
         try {        
         parcelDAO.modifyParcel(destiny, id);
         PrintWriter out = response.getWriter();
-            response.sendRedirect("myFormParcel.jsp?message=destino editado");
+            response.sendRedirect("parcel.jsp");
         } catch (SQLException sqle) {
             response.sendRedirect("myFormParcel.jsp?message==error");
         }
